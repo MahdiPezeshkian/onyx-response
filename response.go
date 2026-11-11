@@ -66,11 +66,17 @@ type PagedResponse[T any] struct {
 }
 
 // PagedSuccess builds a successful paginated response.
-// HasNextPage is computed as (pageNumber*pageSize)+len(items) < totalCount.
+//
+// Pagination contract: PageNumber is 1-based (first page is 1), matching the
+// historical JSON fixtures and common API usage. HasNextPage is:
+//
+//	(pageNumber-1)*pageSize + len(items) < totalCount
+//
 // Both nil and empty items slices are omitted from JSON (omitempty).
+// StatusCode is a caller-supplied JSON body field for legacy compatibility.
 func PagedSuccess[T any](items []T, pageNumber, pageSize, totalCount, statusCode int, message string) *PagedResponse[T] {
 	itemsCount := len(items)
-	hasNextPage := (pageNumber*pageSize)+itemsCount < totalCount
+	hasNextPage := hasNextPage(pageNumber, pageSize, itemsCount, totalCount)
 
 	return &PagedResponse[T]{
 		Base: Base{
