@@ -1,0 +1,8 @@
+{
+  "message": "token refreshed successfully",
+  "has_error": false,
+  "value": {
+    "id": 1,
+    "name": "Ada"
+  }
+}

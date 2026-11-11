@@ -1,0 +1,9 @@
+{
+  "has_error": true,
+  "page_number": 0,
+  "page_size": 0,
+  "items_count": 0,
+  "total_count": 0,
+  "has_next_page": false,
+  "status_code": 500
+}

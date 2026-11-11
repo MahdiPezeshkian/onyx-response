@@ -1,0 +1,16 @@
+{
+  "message": "ok",
+  "has_error": false,
+  "items": [
+    {
+      "id": 1,
+      "name": "Ada"
+    }
+  ],
+  "page_number": 1,
+  "page_size": 10,
+  "items_count": 1,
+  "total_count": 25,
+  "has_next_page": true,
+  "status_code": 200
+}

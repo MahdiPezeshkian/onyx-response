@@ -1,0 +1,10 @@
+{
+  "message": "ok",
+  "has_error": false,
+  "page_number": 1,
+  "page_size": 10,
+  "items_count": 0,
+  "total_count": 0,
+  "has_next_page": false,
+  "status_code": 200
+}
