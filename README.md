@@ -65,6 +65,8 @@ style; JSON output is covered by golden fixtures under `testdata/fixtures`.
 - Does not map domain errors to HTTP status codes.
 - `PagedResponse.StatusCode` is a **caller-supplied JSON body field** preserved
   for compatibility; it is not interpreted by this package.
+- Pagination is **1-based** (`page_number` starts at 1). `has_next_page` uses
+  `(pageNumber-1)*pageSize + itemsCount < totalCount`.
 - Empty `message` / `error_message` and nil `value` are omitted via `omitempty`.
 - Both nil and empty `items` slices omit the `items` field (legacy quirk).
 
